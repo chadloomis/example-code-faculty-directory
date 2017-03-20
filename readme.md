@@ -2,6 +2,8 @@
 
 This package contains all the basic code that is needed to add a simple Faculty Directory to your site. This code is intended to be added to an existing implementation or the starter package, which includes standard OU code skeleton files, such as common.xsl and other shared XSL files. This solution, while created for faculty, could also function as a directory for generic profiles or staff listings. 
 
+OU are not held responsible for your misuse, and no support other than pointing out where to find their own solutions will be provided
+
 ## Overview
 
 The Faculty Directory code provided in this package provides a simple, XSL-based solution that allows for easy creation and maintenance of a faculty directory, consisting of a number of profile pages and a listing page that aggregates the information from each individual profile page into a consolidated list. This solution ensures the profiles all follow a standard layout that remains consistent across each profile and pulls them together as a whole. In addition, this makes it possible to easily grab important information for display on a listing page. 
@@ -60,13 +62,13 @@ The following steps will allow you to add a simple Faculty Directory to your tem
 3. **Update the XSL** to transform the data from the PCF into the desired HTML output, using `profile.xsl` for the listing and individual profile views. 
  - This solution assumes that the listing and individual profile pages will share a common global structure. The XSL template named `faculty-profile` is called where the page types will different in their output. 
  - The XSL will determine which view is used by the presence (or absence) of the <profile> node. If a <profile> node is present in a PCF, then it will be treated as a profile page; otherwise it will be treated as a listing page. 
- - The individual profile page output pulls from a profile page's data within the <profile> node, adding an `href` attribute for the link if needed in the output. For outputting the data, simply use the ouc:div's label attribute value (replacing spaces with underscores) as the element name. For example,  
+ - The individual profile page output pulls from a profile page's data within the <profile> node, adding an `href` attribute for the link if needed in the output. For outputting the data, simply use the ouc:div's label attribute value (replacing spaces with underscores) as the element name. For example, 
  ```
  <ouc:div label="firstname" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="First Name" alt="First Name"/>John</ouc:div>
  ``` 
  can be referenced in the template match for "profile" as 
  ```
- <xsl:value-of select="firstname" />```
+ <xsl:value-of select="firstname" />``` 
   - Update helper.xsl, line 19, with your output extension so the proper links will be generated on the listing page. The default in this package shows `.aspx`. 
 
 #### Notes
