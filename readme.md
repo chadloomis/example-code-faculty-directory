@@ -46,7 +46,42 @@ profile.tcf | YES | Starts the creation of a new individual profile page.
 profile.tmpl | YES | Finalizes the individual profile creation process, creates a MultiEdit page for each profile.  Suggestion would be to base this off an existing template in the site and copy over the profile node with the MultiEdit.
 profile_landing.tmpl | YES | Creates the profile landing page to list the profiles. From the _profile_section.tcf.
 
-#### jQuery dataTables
+## Using the Starter Code
+
+The following steps will allow you to add a simple Faculty Directory to your templates. 
+
+1. **Upload the package files** to their respective locations, as reflected in the directory structure. 
+ - XSL files should be placed in `/_resources/xsl/_profiles/`. These files do not need to be published, but it is recommended to [save a version](http://support.omniupdate.com/oucampus10/pages/review/versions.html) each time changes are made. 
+ - TCF/TMPL files should be placed in your site's templates folder, typically `/_resources/xsl/ou/templates/`. If your site uses Remote templates as defined in the [site settings](http://support.omniupdate.com/oucampus10/setup/sites/site-settings/production-server-ftp-settings.html#template-location), you will need to publish these files as well. 
+
+2. **Update the PCF files** with the information you wish to display. You may add or remove the given fields to contain the information you would like displayed in your faculty directory. 
+ - **All information that should be aggregated to the listing page must appear as MultiEdit fields in the <profile> node.** This is important to ensure the data is consistent for the individual XML output for each profile. 
+
+3. **Update the XSL** to transform the data from the PCF into the desired HTML output, using `profile.xsl` for the listing and individual profile views. 
+ - This solution assumes that the listing and individual profile pages will share a common global structure. The XSL template named `faculty-profile` is called where the page types will different in their output. 
+ - The XSL will determine which view is used by the presence (or absence) of the <profile> node. If a <profile> node is present in a PCF, then it will be treated as a profile page; otherwise it will be treated as a listing page. 
+ - The individual profile page output pulls from a profile page's data within the <profile> node, adding an `href` attribute for the link if needed in the output. For outputting the data, simply use the ouc:div's label attribute value (replacing spaces with underscores) as the element name. For example,  
+ ```
+ <ouc:div label="firstname" group="Everyone" button="hide"><ouc:multiedit type="text" prompt="First Name" alt="First Name"/>John</ouc:div>
+ ``` 
+ can be referenced in the template match for "profile" as 
+ ```
+ <xsl:value-of select="firstname" />```
+  - Update helper.xsl, line 19, with your output extension so the proper links will be generated on the listing page. The default in this package shows `.aspx`. 
+
+#### Notes
+
+Here are some helpful things to remember/note about this code:
+
+1. Include all of the files in all the right places, probably common.xsl.
+2. Double check your paths to all files, even images, before you think it's broken.
+3. Don't forget to include profile-xml.xsl in your individual profile pcf as well as your listing page pcf, like so: 
+```
+<?pcf-stylesheet path="/_resources/xsl/profiles/profile-xml.xsl" alternate="yes" extension="xml"?>
+```
+4. Don't forget to update the helper.xsl on line 21 with your server side scripting language.
+
+#### jQuery dataTables Reference
 
 * [https://datatables.net/](https://datatables.net/)
 * [https://github.com/DataTables/DataTables](https://github.com/DataTables/DataTables)
