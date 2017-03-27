@@ -1,8 +1,8 @@
 # Faculty Directory - with jQuery Datatables
 
-This package contains all the basic code that is needed to add a simple Faculty Directory to your site. This code is intended to be added to an existing implementation or the starter package, which includes standard OU code skeleton files, such as common.xsl and other shared XSL files. This solution, while created for faculty, could also function as a directory for generic profiles or staff listings. 
+This package contains all the basic code that is needed to add a simple Faculty Directory to your site. *This code is intended to be added to an existing implementation or the starter package*, which includes standard OU code skeleton files, such as common.xsl and other shared XSL files. This solution, while created for faculty, could also function as a directory for generic profiles or staff listings. 
 
-OU are not held responsible for your misuse, and no support other than pointing out where to find their own solutions will be provided
+OU is not held responsible for your misuse, and support for this code will be limited to pointing out where to find your own solutions. 
 
 ## Overview
 
