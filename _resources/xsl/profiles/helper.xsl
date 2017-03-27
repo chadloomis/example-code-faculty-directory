@@ -16,7 +16,7 @@
 
 	<xsl:function name="ou:get-profile">
 		<xsl:param name="document" />
-		<profile href="{concat($dirname, replace($ou:filename, '.xml', '.aspx'))}">
+		<profile href="{concat($dirname, replace($ou:filename, '.xml', '.html'))}">
 			<xsl:for-each select="$document/profile/ouc:div">
 				<xsl:element name="{translate(./@label, ' ', '_')}"><xsl:apply-templates select="node()[not(self::ouc:multiedit)]" /></xsl:element>
 			</xsl:for-each>

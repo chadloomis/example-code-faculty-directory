@@ -70,7 +70,7 @@ The following steps will allow you to add a simple Faculty Directory to your tem
  ```
  <xsl:value-of select="firstname" />
  ``` 
-  - Update helper.xsl, line 19, with your output extension so the proper links will be generated on the listing page. The default in this package shows `.aspx`. 
+  - Update helper.xsl, line 19, with your output extension so the proper links will be generated on the listing page. The default in this package shows `.html`. 
 
 #### Notes
 
