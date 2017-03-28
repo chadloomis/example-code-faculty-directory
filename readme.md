@@ -1,6 +1,6 @@
 # Faculty Directory - with jQuery Datatables
 
-This package contains all the basic code that is needed to add a simple Faculty Directory to your site. *This code is intended to be added to an existing implementation or the starter package*, which includes standard OU code skeleton files, such as common.xsl and other shared XSL files. This solution, while created for faculty, could also function as a directory for generic profiles or staff listings. 
+This package contains all the basic code that is needed to add a simple Faculty Directory to your site. **This code is intended to be added to an existing implementation or the starter package**, which includes standard OU code skeleton files, such as common.xsl and other shared XSL files. This solution, while created for faculty, could also function as a directory for generic profiles or staff listings. 
 
 OU is not held responsible for your misuse, and support for this code will be limited to pointing out where to find your own solutions. 
 
@@ -71,6 +71,11 @@ The following steps will allow you to add a simple Faculty Directory to your tem
  <xsl:value-of select="firstname" />
  ``` 
   - Update helper.xsl, line 19, with your output extension so the proper links will be generated on the listing page. The default in this package shows `.html`. 
+  - If your implementation does not use the current OU Campus starter templates, you will need to be sure the XSL template named page-template is either called or updated to what your XSL uses. The same goes for the headcode/footcode. 
+  - If you already have an interior template, it may be helpful to copy the code from your interior XSL and change the call to the main content editable region to a call to page-template, such as:
+ ```
+ <xsl:call-template name="page-template" />
+ ```
 
 #### Notes
 
@@ -83,6 +88,7 @@ Here are some helpful things to remember/note about this code:
 <?pcf-stylesheet path="/_resources/xsl/profiles/profile-xml.xsl" alternate="yes" extension="xml"?>
 ```
 4. Don't forget to update the helper.xsl on line 21 with your server side scripting language.
+5. If you are already using jQuery on your site, make sure the DataTables JavaScript file is called ***after*** jQuery or it will not initialize. 
 
 #### jQuery dataTables Reference
 
