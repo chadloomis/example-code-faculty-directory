@@ -1,3 +1,5 @@
+***The included source code, service and information is provided as is, and OmniUpdate makes no promises or guarantees about its use or misuse. The source code provided is recommended for advanced users and may not be compatible with all implementations of OU Campus.***
+
 # Faculty Directory - with jQuery Datatables
 
 This package contains all the basic code that is needed to add a simple Faculty Directory to your site. **This code is intended to be added to an existing implementation or the starter package**, which includes standard OU code skeleton files, such as common.xsl and other shared XSL files. This solution, while created for faculty, could also function as a directory for generic profiles or staff listings. 
