@@ -20,7 +20,7 @@ Once it is implemented, the basic process to create a faculty directory is as fo
 
 ### Step 1: Use the included template to create a new profile section, where the faculty directory will live. 
 
-The profile section template will create a new folder, with the standard _nav.inc and _props.pcf files. The main listing page for the faculty directory will also be created as the index page. 
+The profile section template will create a new folder, with the standard \_nav.inc and \_props.pcf files. The main listing page for the faculty directory will also be created as the index page. 
 
 ### Step 2: Begin creating the profile pages.
 
@@ -34,7 +34,9 @@ This is a very important step in the process. Publishing each profile not only p
 
 Since this solution utilizes XSL to aggregate the profile data files, the listing page must be published after a profile is modified and published. When published, the listing page will scan all published XML files in the directory and aggregate them into the listing. If a profile is not published, this scan will not see that profile and it will be omitted from the listing. 
 
-If you anticipate a lot of changes to the profiles, the listing page can be set on a scheduled publish to "refresh" the data periodically. If the updates are more infrequent, than a manual publish of the listing page after a change or set of changes may make more sense. 
+Thus, the publishing order should always be:
+ 1. Publish any updated profile pages.
+ 2. Update the listing page for those profiles.
 
 ## Components
 
@@ -45,10 +47,10 @@ File | Required | Description
 helper.xsl | YES | Helps the profile.xsl.
 profile-xml.xsl | YES | Generates the xml output of your profiles, be sure to call this file in your PCF.
 profile.xsl | YES | Where the magic happens.
-_profile_section.tcf | YES | Creates a new profile section, update as necessary.
+\_profile_section.tcf | YES | Creates a new profile section, update as necessary.
 profile.tcf | YES | Starts the creation of a new individual profile page.
 profile.tmpl | YES | Finalizes the individual profile creation process, creates a MultiEdit page for each profile.  Suggestion would be to base this off an existing template in the site and copy over the profile node with the MultiEdit.
-profile_landing.tmpl | YES | Creates the profile landing page to list the profiles. From the _profile_section.tcf.
+profile_landing.tmpl | YES | Creates the profile landing page to list the profiles. From the \_profile_section.tcf.
 
 ## Using the Starter Code
 
