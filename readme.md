@@ -57,8 +57,8 @@ profile_landing.tmpl | YES | Creates the profile landing page to list the profil
 The following steps will allow you to add a simple Faculty Directory to your templates. 
 
 1. **Upload the package files** to their respective locations, as reflected in the directory structure. 
- - XSL files should be placed in `/_resources/xsl/_profiles/`. These files do not need to be published, but it is recommended to [save a version](http://support.omniupdate.com/oucampus10/pages/review/versions.html) each time changes are made. 
- - TCF/TMPL files should be placed in your site's templates folder, typically `/_resources/xsl/ou/templates/`. If your site uses Remote templates as defined in the [site settings](http://support.omniupdate.com/oucampus10/setup/sites/site-settings/production-server-ftp-settings.html#template-location), you will need to publish these files as well. 
+ - XSL files should be placed in `/_resources/xsl/_profiles/`. These files do not need to be published, but it is recommended to [save a version](https://support.omniupdate.com/learn-ou-campus/pages-files/review/versions.html) each time changes are made. 
+ - TCF/TMPL files should be placed in your site's templates folder, typically `/_resources/xsl/ou/templates/`. If your site uses Remote templates as defined in the [site settings](https://support.omniupdate.com/learn-ou-campus/administration/setup/sites/settings.html#productionserverftpsettings), you will need to publish these files as well. 
 
 2. **Update the PCF files** with the information you wish to display. You may add or remove the given fields to contain the information you would like displayed in your faculty directory. 
  - **All information that should be aggregated to the listing page must appear as MultiEdit fields in the <profile> node.** This is important to ensure the data is consistent for the individual XML output for each profile. 
